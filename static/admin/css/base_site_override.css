@@ -1,0 +1,25 @@
+@font-face {
+    font-family: iransans;
+    src: url('/static/fonts/IranSans/eot/IRANSansWeb.eot');
+    src: url('/static/fonts/IranSans/eot/IRANSansWeb.eot?#iefix') format('FontName-opentype'),
+    url('/static/fonts/IranSans/woff/IRANSansWeb.woff') format('woff'),
+    url('/static/fonts/IranSans/ttf/IRANSansWeb.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: iransans !important;
+}
+
+#header {
+    background: #76193a;
+}
+
+div.breadcrumbs {
+    background: #60142f;
+}
+
+input[type="checkbox"].form-control {
+  width: 13px;
+}

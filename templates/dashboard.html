@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+	<link rel="stylesheet" href="{% static 'css/dashboard/dashboard.css' %}?version=1"/>
+{% endblock css %}
+{% block js %}
+  <script type="application/javascript" src="{% static 'js/dashboard/dashboard.js' %}?version=1"></script>
+{% endblock js %}
+
+{% block content %}
+  <div class="content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <h5 class="title" style="text-align: center; direction: rtl;">به سامانه جامع سعید خوش آمدید.</h5>
+          </div>
+          <div class="card-body">
+            <div class="row">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
