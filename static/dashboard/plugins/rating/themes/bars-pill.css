@@ -10,21 +10,20 @@
 	font-weight: 400;
 }
 .br-theme-bars-pill .br-widget a:first-child {
-  -webkit-border-top-right-radius: 999px;
-  -webkit-border-bottom-right-radius: 999px;
-  -moz-border-radius-topright: 999px;
-  -moz-border-radius-bottomright: 999px;
-  border-top-right-radius: 999px;
-  border-bottom-right-radius: 999px;
-
-}
-.br-theme-bars-pill .br-widget a:last-child {
   -webkit-border-top-left-radius: 999px;
   -webkit-border-bottom-left-radius: 999px;
   -moz-border-radius-topleft: 999px;
   -moz-border-radius-bottomleft: 999px;
   border-top-left-radius: 999px;
   border-bottom-left-radius: 999px;
+}
+.br-theme-bars-pill .br-widget a:last-child {
+  -webkit-border-top-right-radius: 999px;
+  -webkit-border-bottom-right-radius: 999px;
+  -moz-border-radius-topright: 999px;
+  -moz-border-radius-bottomright: 999px;
+  border-top-right-radius: 999px;
+  border-bottom-right-radius: 999px;
 }
 
 .br-theme-bars-pill .br-readonly a {

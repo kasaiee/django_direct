@@ -654,13 +654,13 @@ div.breadcrumbs {
     text-align: left;
 }
 
-div.breadcrumbs a {
+/* div.breadcrumbs a {
     color: #fff;
 }
 
 div.breadcrumbs a:focus, div.breadcrumbs a:hover {
     color: #c4dce8;
-}
+} */
 
 /* ACTION ICONS */
 
@@ -785,7 +785,7 @@ table#change-history tbody th {
 }
 
 #content-main {
-    float: left;
+    /* float: left; */
     width: 100%;
 }
 

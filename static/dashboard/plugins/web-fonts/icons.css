@@ -7512,8 +7512,8 @@
 
 @font-face {
   font-family: 'themify';
-  src: url("/static/dashboard/plugins/web-fonts/font/themify9f24.eot?-fvbane");
-  src: url("/static/dashboard/plugins/web-fonts/font/themifyd41d.eot?#iefix-fvbane") format("embedded-opentype"), url("/static/dashboard/plugins/web-fonts/font/themify9f24.woff?-fvbane") format("woff"), url("/static/dashboard/plugins/web-fonts/font/themify9f24.ttf?-fvbane") format("truetype"), url("/static/dashboard/plugins/web-fonts/font/themify9f24.svg?-fvbane#themify") format("svg");
+  src: url("font/themify9f24.eot?-fvbane");
+  src: url("font/themifyd41d.eot?#iefix-fvbane") format("embedded-opentype"), url("font/themify9f24.woff?-fvbane") format("woff"), url("font/themify9f24.ttf?-fvbane") format("truetype"), url("font/themify9f24.svg?-fvbane#themify") format("svg");
   font-weight: normal;
   font-style: normal; }
 [class^="ti-"], [class*=" ti-"] {

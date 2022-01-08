@@ -2,15 +2,15 @@ $(function(e) {
 	
 	//Basic
 	$('#swal-basic').on('click', function () {
-		swal('به صفحه مدیر خود خوش آمدید')
+		swal('Welcome to Your Admin Page')
 	});
 	
 	//A title with a text under
 	$('#swal-title').click(function () {
 		swal(
 			{
-				title: 'این یک عنوان است!',
-				text: 'همه در الگو موجود است',
+				title: 'Here is  a title!',
+				text: 'All are available in the template',
 			}
 		)
 	});
@@ -19,8 +19,8 @@ $(function(e) {
 	$('#swal-success').click(function () {
 		swal(
 			{
-				title: 'آفرین!',
-				text: 'شما دکمه را کلیک کردید!',
+				title: 'Well done!',
+				text: 'You clicked the button!',
 				type: 'success',
 				confirmButtonColor: '#57a94f'
 			}
@@ -30,37 +30,37 @@ $(function(e) {
 	//Warning Message
 	$('#swal-warning').click(function () {
 		swal({
-		  title: "مطمئنی؟",
-		  text: "شما قادر به بازیابی این پرونده خیالی نخواهید بود!",
+		  title: "Are you sure?",
+		  text: "Your will not be able to recover this imaginary file!",
 		  type: "warning",
 		  showCancelButton: true,
 		  confirmButtonClass: "btn btn-danger",
-		  confirmButtonText: "بله ، آن را حذف کنید!",
+		  confirmButtonText: "Yes, delete it!",
 		  closeOnConfirm: false
 		},
 		function(){
-		  swal("حذف شده!", "پرونده خیالی شما حذف شده است.", "موفقیت");
+		  swal("Deleted!", "Your imaginary file has been deleted.", "success");
 		});
 	});
 	
 	//Parameter
 	$('#swal-parameter').click(function () {
 		swal({
-		  title: "مطمئنی?",
-		  text: "شما قادر به بازیابی این پرونده خیالی نخواهید بود!",
+		  title: "Are you sure?",
+		  text: "You will not be able to recover this imaginary file!",
 		  type: "warning",
 		  showCancelButton: true,
 		  confirmButtonClass: "btn-danger",
-		  confirmButtonText: "بله ، آن را حذف کنید!",
-		  cancelButtonText: "نه ، لطفا را لغو کنید!",
+		  confirmButtonText: "Yes, delete it!",
+		  cancelButtonText: "No, cancel plx!",
 		  closeOnConfirm: false,
 		  closeOnCancel: false
 		},
 		function(isConfirm) {
 		  if (isConfirm) {
-			swal("حذف شده!", "پرونده خیالی شما حذف شده است.", "موفقیت");
+			swal("Deleted!", "Your imaginary file has been deleted.", "success");
 		  } else {
-			swal("لغو شد", "پرونده خیالی شما بی خطر است :)", "خطا");
+			swal("Cancelled", "Your imaginary file is safe :)", "error");
 		  }
 		});
 	});
@@ -68,8 +68,8 @@ $(function(e) {
 	//Custom Image
 	$('#swal-image').click(function () {
 		swal({
-			title: 'دوست داشتني!',
-			text: 'تصویر شما بارگذاری می شود.',
+			title: 'Lovely!',
+			text: 'your image is uploaded.',
 			imageUrl: '../../assets/img/brand/logo.png',
 			animation: false
 		})
@@ -78,8 +78,8 @@ $(function(e) {
 	//Auto Close Timer
 	$('#swal-timer').click(function () {
 		swal({
-			title: 'هشدار بستن خودکار!',
-			text: '1 ثانیه دیگر می بندم.',
+			title: 'Auto close alert!',
+			text: 'I will close in 1 seconds.',
 			timer: 1000
 		}).then(
 			function () {
@@ -87,7 +87,7 @@ $(function(e) {
 			// handling the promise rejection
 			function (dismiss) {
 				if (dismiss === 'timer') {
-					console.log('با تایمر بسته شدم')
+					console.log('I was closed by the timer')
 				}
 			}
 		)
@@ -97,15 +97,15 @@ $(function(e) {
 	//Ajax with Loader Alert
 	$('#swal-ajax').click(function () {
 		swal({
-		  title: "نمونه درخواست آژاکس",
-		  text: "برای اجرای درخواست ajax ارسال کنید",
+		  title: "Ajax request example",
+		  text: "Submit to run ajax request",
 		  type: "info",
 		  showCancelButton: true,
 		  closeOnConfirm: false,
 		  showLoaderOnConfirm: true
 		}, function () {
 		  setTimeout(function () {
-			swal("درخواست آژاکس تمام شد!");
+			swal("Ajax request finished!");
 		  }, 2000);
 		});
 	});

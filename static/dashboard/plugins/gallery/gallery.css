@@ -674,7 +674,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 	display: block;
 	white-space: pre;
 	padding: 4px 12px;
-	font-family: iransans;
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 12px;
 }
 .lg-outer .lg-dropdown a:hover {

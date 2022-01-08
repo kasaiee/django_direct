@@ -7,8 +7,8 @@ License: MIT
 
 .sp-container {
     position:absolute;
-    bottom: 22%;
-    right: auto !important;
+    top:0;
+    left:0;
     display:inline-block;
     *display: inline;
     *zoom: 1;

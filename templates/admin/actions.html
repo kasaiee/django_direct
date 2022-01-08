@@ -1,8 +1,17 @@
 {% load i18n %}
+{% load direct_tags %}
 <div class="actions">
   {% block actions %}
     {% block actions-form %}
-    {% for field in action_form %}{% if field.label %}<label style="align-items: center">{{ field.label }} {% endif %}{{ field }}{% if field.label %}</label>{% endif %}{% endfor %}
+    {% for field in action_form %}
+      {% if field.label %}
+        <label style="align-items: center">{{ field.label }}
+      {% endif %}
+        {{ field|add_class:'form-control select2-no-search select2-hidden-accessible' }}
+      {% if field.label %}
+        </label>
+      {% endif %}
+    {% endfor %}
     {% endblock %}
     {% block actions-submit %}
     <button type="submit" class="btn ripple btn-primary" style="height: 38px" title="{% trans "Run the selected action" %}" name="index" value="{{ action_index|default:0 }}">{% trans "Go" %}</button>
