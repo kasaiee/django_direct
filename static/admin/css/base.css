@@ -578,6 +578,11 @@ ul.messagelist li.error {
     background-position: 5px 12px;
 }
 
+.form-row.errors {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
 ul.errorlist {
     margin: 0 0 4px;
     padding: 0;
@@ -654,13 +659,13 @@ div.breadcrumbs {
     text-align: left;
 }
 
-div.breadcrumbs a {
+/* div.breadcrumbs a {
     color: #fff;
 }
 
 div.breadcrumbs a:focus, div.breadcrumbs a:hover {
     color: #c4dce8;
-}
+} */
 
 /* ACTION ICONS */
 
@@ -785,7 +790,7 @@ table#change-history tbody th {
 }
 
 #content-main {
-    float: left;
+    /* float: left; */
     width: 100%;
 }
 

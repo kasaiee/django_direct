@@ -6,7 +6,7 @@ in `settings.py`
 
 ```
 INSTALLED_APPS  = [
-    'kartable',
+    'django_direct',
     ...
     'django.contrib.admin',
 ]

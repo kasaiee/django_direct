@@ -7473,7 +7473,7 @@ function makeFont(style) {
         style.fontWeight,
         (style.fontSize || 12) + 'px',
         // If font properties are defined, `fontFamily` should not be ignored.
-        style.fontFamily || 'iransans'
+        style.fontFamily || 'sans-serif'
     ].join(' ') || style.textFont || style.font;
 }
 
@@ -16522,7 +16522,7 @@ function getFont(opt, ecModel) {
         opt.fontStyle || gTextStyleModel && gTextStyleModel.getShallow('fontStyle') || '',
         opt.fontWeight || gTextStyleModel && gTextStyleModel.getShallow('fontWeight') || '',
         (opt.fontSize || gTextStyleModel && gTextStyleModel.getShallow('fontSize') || 12) + 'px',
-        opt.fontFamily || gTextStyleModel && gTextStyleModel.getShallow('fontFamily') || 'iransans'
+        opt.fontFamily || gTextStyleModel && gTextStyleModel.getShallow('fontFamily') || 'sans-serif'
     ].join(' ');
 }
 
@@ -18620,7 +18620,7 @@ var globalDefault = {
         // color: '#000',
         // decoration: 'none',
         // PENDING
-        fontFamily: platform.match(/^Win/) ? 'iransans' : 'sans-serif',
+        fontFamily: platform.match(/^Win/) ? 'Microsoft YaHei' : 'sans-serif',
         // fontFamily: 'Arial, Verdana, sans-serif',
         fontSize: 12,
         fontStyle: 'normal',
@@ -71206,7 +71206,7 @@ DataView.prototype.onclick = function (ecModel, api) {
         // Use default textarea
         viewMain.appendChild(textarea);
         textarea.readOnly = model.get('readOnly');
-        textarea.style.cssText = 'width:100%;height:100%;font-family:iransans;font-size:14px;line-height:1.6rem;';
+        textarea.style.cssText = 'width:100%;height:100%;font-family:monospace;font-size:14px;line-height:1.6rem;';
         textarea.style.color = model.get('textColor');
         textarea.style.borderColor = model.get('textareaBorderColor');
         textarea.style.backgroundColor = model.get('textareaColor');
@@ -72598,7 +72598,7 @@ if (!env$1.canvasSupported) {
                 variant: style.fontVariant || DEFAULT_STYLE_NORMAL,
                 weight: style.fontWeight || DEFAULT_STYLE_NORMAL,
                 size: parseFloat(style.fontSize || 12) | 0,
-                family: fontFamily || 'iransans'
+                family: fontFamily || 'Microsoft YaHei'
             };
 
             fontStyleCache[fontString] = fontStyle;

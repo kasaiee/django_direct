@@ -5,7 +5,7 @@ from django.utils.text import capfirst
 
 
 class DirectAdminSite(AdminSite):
-    site_header = 'سامانه CMMS'
+    site_header = 'INVOICING APP'
 
     def _build_app_dict(self, request, label=None):
         """

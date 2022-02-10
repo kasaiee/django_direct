@@ -191,7 +191,7 @@ timezone: -60
 						<code>false</code> for left-to-right. */
 		regionalOptions: { // Available regional settings, indexed by language/country code
 			'': { // Default regional settings - English/US
-				labels: ['سال ها', 'ماه ها', 'هفته ها', 'روزها', 'ساعت ها', 'دقایق', 'ثانیه ها'],
+				labels: ['Years', 'Months', 'Weeks', 'Days', 'Hours', 'Minutes', 'Seconds'],
 				labels1: ['Year', 'Month', 'Week', 'Day', 'Hour', 'Minute', 'Second'],
 				compactLabels: ['y', 'm', 'w', 'd'],
 				whichLabels: null,

@@ -1,0 +1,80 @@
+.module.filtered {
+  flex-direction: column
+}
+#changelist #toolbar {
+  border-top: none;
+  border-bottom: none;
+  background: #fff;
+  padding: 0
+}
+#changelist-filter {
+  z-index: 0
+}
+.dropdown-menu {
+  z-index: 1
+}
+#changelist .actions {
+  padding: 0;
+  padding-bottom: 10px
+}
+
+label {
+  margin-bottom: 0;
+}
+div.breadcrumbs {
+  background: none;
+  color: #888;
+  padding: 0;
+}
+div.breadcrumbs a {
+  color: #222
+}
+div.breadcrumbs a:hover {
+  color: #444
+}
+#site-name {
+  margin: 0
+}
+#content {
+  margin-top: 55px
+}
+.main-header.side-header.sticky {
+  top: 0
+}
+.form-row {
+  margin: 0;
+  border-bottom: none;
+  display: flex;
+  /* flex-direction: column-reverse; */
+  flex-direction: row;
+  align-items: flex-start;
+}
+#login-form .form-row {
+  flex-direction: inherit;
+}
+.signpages .login_form {
+  background-color: #ffffff50;
+  backdrop-filter: blur(6px);
+}
+.form-row:not(:last-child) {
+  border-bottom: 1px solid #eeeeee80;
+}
+#login-form .form-row:not(:last-child) {
+  border-bottom: none;
+}
+form .aligned ul {
+  padding-left: 0
+}
+fieldset.module {
+  margin-bottom: 0;
+}
+fieldset.card-body {
+  padding: 25px 0;
+}
+#changelist-filter {
+  overflow: auto;
+  height: 100%;
+}
+select, input[type="number"], input[type="text"] {
+  width: 200px
+}

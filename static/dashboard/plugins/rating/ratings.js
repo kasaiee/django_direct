@@ -24,7 +24,7 @@ $(function() {
             allowEmpty: true,
             emptyValue: '-- no rating selected --',
             onSelect: function(value, text) {
-                alert('رتبه بندی انتخاب شده است: ' + value);
+                alert('Selected rating: ' + value);
             }
         });
 

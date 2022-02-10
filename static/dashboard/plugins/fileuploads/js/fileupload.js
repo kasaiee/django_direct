@@ -47,7 +47,7 @@ function Dropify(element, options) {
         allowedFileExtensions: ['*'],
         messages: {
             'default': 'Drag and drop a file here or click',
-            'replace': 'کشیدن و رها کردن یا کلیک کنید تا جایگزین شود',
+            'replace': 'Drag and drop or click to replace',
             'remove':  'Remove',
             'error':   'Ooops, something wrong happended.'
         },
