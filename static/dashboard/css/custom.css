@@ -78,3 +78,9 @@ fieldset.card-body {
 select, input[type="number"], input[type="text"] {
   width: 200px
 }
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

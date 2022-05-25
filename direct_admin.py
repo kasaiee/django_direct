@@ -2,10 +2,10 @@ from django.apps import apps
 from django.contrib.admin import AdminSite
 from django.urls import NoReverseMatch, reverse
 from django.utils.text import capfirst
-
+from django.conf import settings
 
 class DirectAdminSite(AdminSite):
-    site_header = 'INVOICING APP'
+    site_header = settings.DIRECT['app_name']
 
     def _build_app_dict(self, request, label=None):
         """

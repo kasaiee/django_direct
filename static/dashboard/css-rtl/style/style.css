@@ -58,6 +58,10 @@ html {
     font-family: iransans;
 }
 
+span, div, a, td, th, option {
+  font-family: iransans
+}
+
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     display: block
 }
@@ -341,7 +345,7 @@ template {
 }
 
 .h1, h1 {
-    font-size: 2.1875rem
+    font-size: 1.2875rem
 }
 
 .h2, h2 {
@@ -71197,8 +71201,8 @@ div.dtr-modal div.dtr-modal-content {
 
 .signpages .login_form {
     background-color: #fff;
-    border-top-right-radius: 6px;
-    border-bottom-right-radius: 6px
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px
 }
 
 .signpages .form__input {

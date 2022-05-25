@@ -11,7 +11,7 @@
   </div>
   <div>
     {% url opts|admin_urlname:'delete' original.pk|admin_urlquote as delete_url %}
-    <p class="deletelink-box btn ripple btn-outline-error"><a href="{% add_preserved_filters delete_url %}" class="deletelink">{% trans "Delete" %}</a></p>
+    <a class="btn ripple btn-outline-danger" href="{% add_preserved_filters delete_url %}">{% trans "Delete" %}</a>
   </div>
 {% endif %}
 {% endblock %}

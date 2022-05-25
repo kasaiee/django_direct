@@ -103,7 +103,7 @@
               "undefined" !== n(e) && !1 !== e && $(this).css("background", "url(" + e + ") center center")
           })), $(".select2-no-search").select2({
               minimumResultsForSearch: 1 / 0,
-              placeholder: "All categories",
+              placeholder: "عملیات انتخابی",
               width: "100%"
           });
           var e = location.pathname.split("/").slice(-1)[0].replace(/^\/|\/$/g, "");

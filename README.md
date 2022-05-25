@@ -23,7 +23,8 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 ...
-                'django_direct.context_processors.get_app_list'
+                'django_direct.context_processors.get_app_list',
+                'django_direct.context_processors.get_settings',
             ],
         },
     },

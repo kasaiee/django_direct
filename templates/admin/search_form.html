@@ -4,10 +4,10 @@
 <div><!-- DIV needed for valid HTML -->
 <label for="searchbar"></label>
 <div class="input-group file-browser">
-  <input type="text" size="40" name="{{ search_var }}" value="{{ cl.query }}" autofocus class="form-control border-right-0">
+  <input type="text" size="40" name="{{ search_var }}" value="{{ cl.query }}" autofocus class="form-control {% if LANGUAGE_BIDI %}border-right-0{% else %}border-left-0{% endif %}">
   <label class="input-group-btn">
     <span class="btn btn-primary">
-      search <input type="submit" style="display: none;" value="{% trans 'Search' %}">
+      {% trans 'Search' %} <input type="submit" style="display: none;" value="{% trans 'Search' %}">
     </span>
   </label>
 </div>

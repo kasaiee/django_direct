@@ -785,9 +785,9 @@ table#change-history tbody th {
     padding: 20px 40px;
 }
 
-.dashboard #content {
+/* .dashboard #content {
     width: 600px;
-}
+} */
 
 #content-main {
     /* float: left; */
@@ -808,9 +808,9 @@ table#change-history tbody th {
 
 /* COLUMN TYPES */
 
-.colMS {
+/* .colMS {
     margin-right: 300px;
-}
+} */
 
 .colSM {
     margin-left: 300px;

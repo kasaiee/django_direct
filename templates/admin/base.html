@@ -185,13 +185,15 @@
 						<a class="main-header-menu-icon" href="#" id="mainSidebarToggle"><span></span></a>
 					</div>
 					<div class="main-header-center">
-						<div class="responsive-logo">
-							<a href="index.html"><img src="{% static 'dashboard/img/brand/logo2.png' %}" class="mobile-logo" alt="logo"></a>
-							<a href="index.html"><img src="{% static 'dashboard/img/brand/logo2.png' %}" class="mobile-logo-dark" alt="logo"></a>
-						</div>
+            <div class="logo-container">
+              <div class="responsive-logo">
+                <a href="index.html"><img src="{% static settings.DIRECT.logo %}" class="mobile-logo" alt="logo"></a>
+                <a href="index.html"><img src="{% static settings.DIRECT.logo %}" class="mobile-logo-dark" alt="logo"></a>
+              </div>
               {% block branding %}{% endblock %}
               {% block usertools %}{% endblock %}
               {% block nav-global %}{% endblock %}
+            </div>
               {% block breadcrumbs %}
               <div class="breadcrumbs">
               <a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
@@ -266,7 +268,7 @@
 						</div>
 						<div class="dropdown main-profile-menu">
 							<a class="d-flex" href="#">
-								<span class="main-img-user" ><img alt="avatar" src="{% static 'dashboard/img/users/1.jpg' %}"></span>
+								<span class="main-img-user" ><img alt="avatar" src="{% static 'admin/img/user.png' %}"></span>
 							</a>
 							<div class="dropdown-menu">
 								<div class="header-navheading">
@@ -304,24 +306,6 @@
                     <i class="fe fe-power"></i> {% trans 'Log out' %}
                   </a>
                 {% endblock %}
-								<a class="dropdown-item border-top" href="profile.html">
-									<i class="fe fe-user"></i> My Profile
-								</a>
-								<a class="dropdown-item" href="profile.html">
-									<i class="fe fe-edit"></i> Edit Profile
-								</a>
-								<a class="dropdown-item" href="profile.html">
-									<i class="fe fe-settings"></i> Account Settings
-								</a>
-								<a class="dropdown-item" href="profile.html">
-									<i class="fe fe-settings"></i> Support
-								</a>
-								<a class="dropdown-item" href="profile.html">
-									<i class="fe fe-compass"></i> Activity
-								</a>
-								<a class="dropdown-item" href="signin.html">
-									<i class="fe fe-power"></i> Sign Out
-								</a>
 							</div>
 						</div>
 						<div class="dropdown d-md-flex header-settings">
@@ -500,43 +484,46 @@
     <!-- Content -->
     <div id="content" class="{% block coltype %}colM{% endblock %}">
       {% block main-sidebar %}
-        <div class="main-sidebar main-sidebar-sticky side-menu ps ps--active-y">
-          <div class="sidemenu-logo">
-            <a class="main-logo" href="index.html">
-              <img src="{% static 'dashboard/img/brand/logo2.png' %}" class="header-brand-img desktop-logo" alt="لوگو">
-              <img src="{% static 'dashboard/img/brand/icon-light.png' %}" class="header-brand-img icon-logo" alt="لوگو">
-              <img src="{% static 'dashboard/img/brand/logo.png' %}" class="header-brand-img desktop-logo theme-logo" alt="لوگو">
-              <img src="{% static 'dashboard/img/brand/icon.png' %}" class="header-brand-img icon-logo theme-logo" alt="لوگو">
-            </a>
-          </div>
-          <div class="main-sidebar-body">
-            <ul class="nav">
-            {% if APP_LIST %}
-                {% for app in APP_LIST %}
-                <li class="nav-item  {% if app.models.0.admin_url|is_match:request.path %}active show{% endif %}">
-                  <a class="nav-link with-sub" href="#"><span class="shape1"></span><span class="shape2"></span><i class="{{ app.icon }} sidemenu-icon"></i><span class="sidemenu-label">{{ app.name }}</span><i class="angle fe fe-chevron-left"></i></a>
-                  <ul class="nav-sub">
-                    {% for model in app.models %}
-                      <li class="nav-sub-item {% if model.admin_url == request.path %}active{% endif %}">
-                      {% if model.admin_url %}
-                        <a class="nav-sub-link" href="{{ model.admin_url }}">{{ model.name }}</a>
-                      {% else %}
-                        <a href="#!">{{ model.name }}</a>
-                      {% endif %}
-                      </li>
-                    {% endfor %}
-                  </ul>
-                </li>
-                {% endfor %}
+        {% if user.is_authenticated %}
+          <div class="main-sidebar main-sidebar-sticky side-menu ps ps--active-y">
+            <div class="sidemenu-logo">
+              <a class="main-logo" href="index.html">
+                <img src="{% static settings.DIRECT.logo_light %}" class="header-brand-img desktop-logo" alt="لوگو">
+                <img src="{% static 'dashboard/img/brand/icon-light.png' %}" class="header-brand-img icon-logo" alt="لوگو">
+                <img src="{% static 'dashboard/img/brand/logo.png' %}" class="header-brand-img desktop-logo theme-logo" alt="لوگو">
+                <img src="{% static 'dashboard/img/brand/icon.png' %}" class="header-brand-img icon-logo theme-logo" alt="لوگو">
+              </a>
+            </div>
+            <div class="main-sidebar-body">
+              <ul class="nav">
+              {% if APP_LIST %}
+                  {% for app in APP_LIST %}
+                  <li class="nav-item  {% if app.models.0.admin_url|is_match:request.path %}active show{% endif %}">
+                    <a class="nav-link with-sub" href="#"><span class="shape1"></span><span class="shape2"></span><i class="{{ app.icon }} sidemenu-icon"></i><span class="sidemenu-label">{{ app.name }}</span><i class="angle fe fe-chevron-left"></i></a>
+                    <ul class="nav-sub">
+                      {% for model in app.models %}
+                        <li class="nav-sub-item {% if model.admin_url == request.path %}active{% endif %}">
+                        {% if model.admin_url %}
+                          <a class="nav-sub-link" href="{{ model.admin_url }}">{{ model.name }}</a>
+                        {% else %}
+                          <a href="#!">{{ model.name }}</a>
+                        {% endif %}
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  </li>
+                  {% endfor %}
+              {% else %}
+                  <p>{% trans "You don't have permission to view or edit anything." %}</p>
+              {% endif %}
+              </ul>
+            </div>
+            <div class="ps__rail-x" style="left: 0px; top: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; height: 944px; right: 2px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 851px;"></div></div></div>
             {% else %}
-                <p>{% trans "You don't have permission to view or edit anything." %}</p>
             {% endif %}
-            </ul>
-          </div>
-          <div class="ps__rail-x" style="left: 0px; top: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; height: 944px; right: 2px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 851px;"></div></div></div>
-        {% endblock main-sidebar %}
+          {% endblock main-sidebar %}
         {% block pretitle %}{% endblock %}
-        {% comment %} {% include 'index.html' %} {% endcomment %}
+        {% include 'index.html' %}
         <div class="card custom-card">
           <div class="card-header custom-card-header border-bottom-0 ">
           {% block content_title %}{% if title %}<h5 class="tx-dark my-auto tx-medium mb-0">{{ title }}</h5>{% endif %}{% endblock %}
@@ -610,9 +597,6 @@
 <!-- Sticky js -->
 {% comment %} <script src="{% static 'dashboard/js/sticky.js' %}"></script> {% endcomment %}
 
-<!-- Custom js -->
-<script src="{% static 'dashboard/js/custom.js' %}"></script>
-
 <!-- Switcher js -->
 {% if LANGUAGE_BIDI %}
 <script src="{% static 'dashboard/switcher/js/switcher-rtl.js' %}"></script>
@@ -632,9 +616,6 @@
 <script src="{% static 'dashboard/plugins/fancyuploder/jquery.fancy-fileupload.js' %}"></script>
 <script src="{% static 'dashboard/plugins/fancyuploder/fancy-uploader.js' %}"></script>
 
-<script src="https://unpkg.com/react@17/umd/react.development.js"></script>
-<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 <script>
 {% comment %} (function ($) {
   // TODO: enable it
@@ -648,5 +629,7 @@
 })(jQuery); {% endcomment %}
 </script>
 {% block extra_js %}{% endblock extra_js %}
+<!-- Custom js -->
+<script src="{% static 'dashboard/js/custom.js' %}"></script>
 </body>
 </html>

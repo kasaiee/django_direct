@@ -1,5 +1,5 @@
 {% extends "admin/base_site.html" %}
-{% load i18n static direct_tags %}
+{% load i18n static direct_tags accounts_tags %}
 
 {% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/login.css" %}">
 {{ form.media }}
@@ -12,6 +12,8 @@
 {% block nav-global %}{% endblock %}
 
 {% block content_title %}{% endblock %}
+
+{% block content %}{% endblock %}
 
 {% block breadcrumbs %}{% endblock %}
 
@@ -43,70 +45,82 @@
 </p>
 {% endif %}
 
-		<!-- Page -->
-		<div class="page main-signin-wrapper">
-			<!-- Row -->
-			<div class="row signpages text-center">
-				<div class="col-md-12">
-					<div class="">
-						<div class="row row-sm">
-							<div class="col-lg-6 col-xl-5 d-none d-lg-block text-center bg-primary">
-								<div class="mt-5 pt-4 p-2">
-									<img src="{% static 'dashboard/img/brand/logo-light.png' %}" class="header-brand-img mb-4" alt="logo">
-									<div class="clearfix"></div>
-									<img src="{% static 'img/svgs/user.svg' %}" class="ht-100 mb-0" alt="user">
-									<h5 class="mt-4 text-white">{% trans 'Welcome to the Invoicing app' %}</h5>
-									<span class="tx-white-6 tx-13 mb-5 mt-xl-0">
-                    Manage your business
-                  </span>
-                  <br />
-                  <span class="tx-white-6 tx-13 mb-5 mt-xl-0">
-                    every where
-                  </span>
-                  <br />
-                  <span class="tx-white-6 tx-13 mb-5 mt-xl-0">
-                    every time
-                  </span>
-                  </span>
-								</div>
-							</div>
-							<div class="col-lg-6 col-xl-7 col-xs-12 col-sm-12 login_form ">
-								<div class="container-fluid">
-									<div class="row row-sm">
-										<div class="mt-2 mb-2">
-											<img src="assets/img/brand/logo.png" class=" d-lg-none header-brand-img text-left float-left mb-4" alt="logo">
-											<div class="clearfix"></div>
-                      <form action="{{ app_path }}" method="post" id="login-form">{% csrf_token %}
-                        <div class="form-row">
-                          {{ form.username.errors }}
-                          {{ form.username.label_tag }} {{ form.username|add_class:'form-control' }}
+    <div class="videobg">
+      <!-- Page -->
+      <div class="page main-signin-wrapper">
+        <!-- Row -->
+        <div class="row signpages text-center">
+          <div class="col-md-12">
+            <div class="">
+              <div class="row row-sm">
+                <div class="col-lg-6 col-xl-5 d-none d-lg-block text-center bg-primary">
+                  <div class="mt-5 pt-4 p-2">
+                    <img src="{% static "dashboard/img/brand/logo-light.png" %}" class="header-brand-img mb-4" alt="logo">
+                    <div class="clearfix"></div>
+                    <img src="{% static 'img/svgs/user.svg' %}" class="ht-100 mb-0" alt="user">
+                    <h5 class="mt-4 text-white">{% trans 'Welcome to the CMMS' %}</h5>
+                    <span class="tx-white-6 tx-13 mb-5 mt-xl-0">
+                      Manage your business
+                    </span>
+                    <br />
+                    <span class="tx-white-6 tx-13 mb-5 mt-xl-0">
+                      every where
+                    </span>
+                    <br />
+                    <span class="tx-white-6 tx-13 mb-5 mt-xl-0">
+                      Copyright © 2022
+                    </span>
+                    </span>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-xl-7 col-xs-12 col-sm-12 login_form">
+                  <div class="container-fluid">
+                    <div class="row row-sm">
+                      <div class="mt-2 mb-2">
+                        <div style="display: flex; justify-content: center;">
+                        <img src="{% static "accounts/image/logo1.png" %}" style="width: 200px" class=" d-lg-none header-brand-img text-left float-left mb-4" alt="logo">
                         </div>
-                        <div class="form-row">
-                          {{ form.password.errors }}
-                          {{ form.password.label_tag }} {{ form.password|add_class:'form-control' }}
-                          <input type="hidden" name="next" value="{{ next }}">
-                        </div>
-                        {% url 'admin_password_reset' as password_reset_url %}
-                        {% if password_reset_url %}
-                        <div class="password-reset-link">
-                          <a href="{{ password_reset_url }}">{% trans 'Forgotten your password or username?' %}</a>
-                        </div>
-                        {% endif %}
-                        <input type="submit" class="btn ripple btn-main-primary btn-block" value="{% trans 'Log in' %}">
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- End Row -->
+                        <div class="clearfix"></div>
+                        <form action="{{ app_path }}" method="post" id="login-form">{% csrf_token %}
+                          <div class="form-row">
+                            {{ form.username.errors }}
+                            {{ form.username.label_tag }} {{ form.username|add_class:'form-control' }}
+                          </div>
+                          <div class="form-row">
+                            {{ form.password.errors }}
+                            {{ form.password.label_tag }} {{ form.password|add_class:'form-control' }}
+                            <input type="hidden" name="next" value="{{ next }}">
+                          </div>
+                          {% url 'admin_password_reset' as password_reset_url %}
+                          {% if password_reset_url %}
+                          <div class="password-reset-link">
+                            <a href="{{ password_reset_url }}">{% trans 'Forgotten your password or username?' %}</a>
+                          </div>
+                          {% endif %}
+                          <div>&nbsp;</div>
+                          <input type="submit" class="btn ripple btn-main-primary btn-block" value="{% trans 'Log in' %}">
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Row -->
 
+        
+        <video autoplay loop muted>
+          {% comment %} <source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.webm" type="video/webm"> {% endcomment %}
+          <source src="{% get_random_video_bg %}" type="video/mp4">
+        </video>
+      </div>
+      <!-- End Page -->
 		</div>
-		<!-- End Page -->
 
 </div>
+
 {% endblock %}
 
 {% block footer %}{% endblock footer %}
@@ -115,6 +129,40 @@
 <style>
   body {
     overflow: hidden
+  }
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .videobg {
+    height: 100vh;
+    overflow: hidden;
+    position: relative; /* requires for to position video properly */
+  }
+  
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover; /* combined with 'absolute', works like background-size, but for DOM elements */
+  }
+  .login_form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  #content {
+    display: none
   }
 </style>
 {% endblock extra_css %}
