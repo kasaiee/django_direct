@@ -55,11 +55,11 @@ $(function() {
 	// 		}
 	// 	}
 	// }
-	var current = location.pathname.split("/").slice(-1)[0].replace(/^\/|\/$/g, '');
-	$('.main-sidebar .nav li a').each(function() {
-		var $this = $(this);
-		addActiveClass($this);
-	});
+	// var current = location.pathname.split("/").slice(-1)[0].replace(/^\/|\/$/g, '');
+	// $('.main-sidebar .nav li a').each(function() {
+	// 	var $this = $(this);
+	// 	addActiveClass($this);
+	// });
 	
 	
 	/*---Scroling ---*/
