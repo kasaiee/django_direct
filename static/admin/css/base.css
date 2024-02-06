@@ -448,7 +448,7 @@ select[multiple] {
 
 /* FORM BUTTONS */
 
-.button, input[type=submit], input[type=button], .submit-row input, a.button {
+.button, input[type=button], .submit-row input, a.button {
     /* background: #79aec8; */
     padding: 10px 15px;
     /* border: none; */
@@ -949,12 +949,12 @@ table#change-history tbody th {
     color: #333;
 }
 
-.delete-confirmation form input[type="submit"] {
+/* .delete-confirmation form input[type="submit"] {
     background: #ba2121;
     border-radius: 4px;
     padding: 10px 15px;
     color: #fff;
-}
+} */
 
 .delete-confirmation form input[type="submit"]:active,
 .delete-confirmation form input[type="submit"]:focus,
@@ -967,7 +967,6 @@ table#change-history tbody th {
     vertical-align: middle;
     height: 15px;
     line-height: 15px;
-    background: #ddd;
     border-radius: 4px;
     padding: 10px 15px;
     color: #333;
