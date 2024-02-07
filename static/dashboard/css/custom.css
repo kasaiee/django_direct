@@ -92,5 +92,16 @@ select.action-select {
 .actions {
   display: flex;
   align-items: end;
-  gap: 10px
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.actions-container {
+  display: flex;
+  align-items: end;
+  gap: 10px;
+}
+
+.hidden {
+  display: none !important
 }
