@@ -37,7 +37,7 @@ TEMPLATES = [
 ```
 from django.contrib import admin
 from django.urls import path
-from django_direct.direct_admin import site as admin_site
+from helpers.django_direct.direct_admin import site as admin_site
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
@@ -71,7 +71,7 @@ class <_APP_NAME>Config(AppConfig):
 
 ```
 # from django.contrib import admin
-from django_direct import direct_admin
+from helpers.django_direct import direct_admin
 from .models import YourModel
 
 
