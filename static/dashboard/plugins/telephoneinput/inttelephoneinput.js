@@ -1,4 +1,3 @@
 $(function() {
     $("#mobile-number").intlTelInput();
 });
-

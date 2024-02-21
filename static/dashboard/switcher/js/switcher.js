@@ -3,7 +3,7 @@
  * Styleswitch stylesheet switcher built on jQuery
  * Under an Attribution, Share Alike License
  * By Kelvin Luck ( http://www.kelvinluck.com/ )
- * Thanks for permission! 
+ * Thanks for permission!
  **/
 (function($){
 	$(document).ready(function() {
@@ -22,7 +22,7 @@
 				defaultColor = this.getAttribute('data-default-color');
 				if(defaultColor){
 					this.disabled = false;
-				}			
+				}
 			});
 		}
 	});
@@ -62,17 +62,14 @@ jQuery('.demo_changer .demo-icon').click(function(){
 	if(jQuery('.demo_changer').hasClass("active")){
 		jQuery('.demo_changer').animate({"right":"-290px"},function(){
 			jQuery('.demo_changer').toggleClass("active");
-		});						
+		});
 	}else{
 		jQuery('.demo_changer').animate({"right":"0px"},function(){
 			jQuery('.demo_changer').toggleClass("active");
-		});			
-	} 
+		});
+	}
 	const ps7 = new PerfectScrollbar('.sidebar-right1', {
 	  useBothWheelAxes:true,
 	  suppressScrollX:true,
 	});
 });
-
-
-

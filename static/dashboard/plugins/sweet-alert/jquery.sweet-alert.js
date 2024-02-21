@@ -1,10 +1,10 @@
 $(function(e) {
-	
+
 	//Basic
 	$('#swal-basic').on('click', function () {
 		swal('Welcome to Your Admin Page')
 	});
-	
+
 	//A title with a text under
 	$('#swal-title').click(function () {
 		swal(
@@ -14,7 +14,7 @@ $(function(e) {
 			}
 		)
 	});
-	
+
 	//Success Message
 	$('#swal-success').click(function () {
 		swal(
@@ -26,7 +26,7 @@ $(function(e) {
 			}
 		)
 	});
-	
+
 	//Warning Message
 	$('#swal-warning').click(function () {
 		swal({
@@ -42,7 +42,7 @@ $(function(e) {
 		  swal("Deleted!", "Your imaginary file has been deleted.", "success");
 		});
 	});
-	
+
 	//Parameter
 	$('#swal-parameter').click(function () {
 		swal({
@@ -64,7 +64,7 @@ $(function(e) {
 		  }
 		});
 	});
-	
+
 	//Custom Image
 	$('#swal-image').click(function () {
 		swal({
@@ -74,7 +74,7 @@ $(function(e) {
 			animation: false
 		})
 	});
-	
+
 	//Auto Close Timer
 	$('#swal-timer').click(function () {
 		swal({
@@ -92,8 +92,8 @@ $(function(e) {
 			}
 		)
 	});
-	
-	
+
+
 	//Ajax with Loader Alert
 	$('#swal-ajax').click(function () {
 		swal({
@@ -109,5 +109,5 @@ $(function(e) {
 		  }, 2000);
 		});
 	});
-	
+
 });

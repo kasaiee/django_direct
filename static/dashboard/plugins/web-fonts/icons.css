@@ -4,8 +4,8 @@
  */
 /* FONT PATH
  * -------------------------- */
- 
- 
+
+
 @font-face {
   font-family: 'FontAwesome';
   src: url('font/fontawesome-webfont3e6e.eot?v=4.7.0');
@@ -15407,6 +15407,3 @@
 
 .pe-7s-airplay:before {
   content: "\e67f"; }
-  
-  
-  

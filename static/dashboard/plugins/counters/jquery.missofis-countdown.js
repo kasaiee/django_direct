@@ -1,12 +1,12 @@
 /*!
  * Missofis Countdown Timer
- * 
+ *
  * 	Author: Kemal Yılmaz
  * 	Website: http://missofis.com
  * 	License: MIT
  *
  * @see http://jqueryboilerplate.com/ for this jQuery plugin boilerplate details
- */ 
+ */
 ;( function ( $, window, document, undefined ) {
 
 
@@ -54,7 +54,7 @@
 		this._name = PLUGIN_NAME;
 
 		// set counter direction (counting up/down) and timer current position
-		// _displacement is -1 for count down +1 for counting up, NaN for equality 
+		// _displacement is -1 for count down +1 for counting up, NaN for equality
 		// set current interval id memory
 		// set counter status flag
 		this._displacement = -1 * ( this.settings.from - this.settings.to ) / Math.abs( this.settings.from - this.settings.to );
@@ -89,7 +89,7 @@
 			this._updateTimerText();
 
 			// check autostart and start counter
-			if( this.settings.autostart ) 
+			if( this.settings.autostart )
 				this._start();
 
 		},
@@ -99,7 +99,7 @@
 		 */
 		destroy: function() {
 
-			// clear timer 
+			// clear timer
 			window.clearInterval( this._intervalID );
 
 			//  remove plugin instance
@@ -114,7 +114,7 @@
 
 			// check if counter is running and return
 			if( this._isCounting )
-				return;			
+				return;
 
 			// start timer
 			this._start();
@@ -160,12 +160,12 @@
 			if( undefined !== this._intervalID )
 				window.clearInterval( this._intervalID );
 
-			// 
+			//
 			this._isCounting = true;
 
-			// todo :: do not set an interval for from == to equality 
+			// todo :: do not set an interval for from == to equality
 
-			// 
+			//
 			this._intervalID = window.setInterval( function() {
 
 				// update timer position (fire event?)
@@ -189,7 +189,7 @@
 			// call timerEnd callback if defined
 			if( this.settings.timerEnd && 'function' === typeof this.settings.timerEnd ) {
 
-				// set calback functions scope to jQuery element timer being created 
+				// set calback functions scope to jQuery element timer being created
 				// todo :: change context with native element instead of jQuery one
 				this.settings.timerEnd.call( this.$element );
 
@@ -205,13 +205,13 @@
 			// get plugin
 			var that = this;
 
-			// 
+			//
 			this._updateTimerText();
 
-			// 
+			//
 			if( this._timerAt === this.settings.to || isNaN( this._timerAt ) ) {
 
-				// 
+				//
 				this._stop();
 
 			}
@@ -226,13 +226,13 @@
 			// get plugin
 			var that = this;
 
-			// 
+			//
 			this.$element.text( function( index, text ) {
 
-				// 
+				//
 				var _parsedStuff = that._parseSeconds( that._timerAt );
 
-				// 
+				//
 				var _daysParsed = _parsedStuff.days.toString(),
 					_hoursParsed = _parsedStuff.hours.toString(),
 				    _minutesParsed = _parsedStuff.minutes.toString(),
@@ -248,12 +248,12 @@
 				if( _parsedStuff.seconds < 10 )
 					_secondsParsed = '0' + _secondsParsed;
 
-				// todo :: compare perfromance between length check and regexp replace 
+				// todo :: compare perfromance between length check and regexp replace
 
 				// return parsed timer string
 				return that.settings.outputPattern.replace( outputReplacement, function( match, offset, string ) {
 
-					// 
+					//
 					switch( match ) {
 						case '$day':
 							return _daysParsed;
@@ -263,12 +263,12 @@
 							return _minutesParsed;
 						case '$second':
 							return _secondsParsed;
-						default: 
+						default:
 							return '';
 					}
 
 				} );
-				
+
 			} );
 
 		},
@@ -311,7 +311,7 @@
 			// return parset numeric values
 			return _parsedTime;
 
-		}		
+		}
 
 	};
 
@@ -333,11 +333,11 @@
 	                $.data( this, 'plugin_' + PLUGIN_NAME, new Plugin( this, options ) );
 
 	        } );
-		
+
 		}
-		// capture any public plugin method call 
+		// capture any public plugin method call
 		// skip pseudo-private function via "_" skipper
-		// skip 'init' call 
+		// skip 'init' call
 		// @see https://github.com/jquery-boilerplate/jquery-boilerplate/wiki/Extending-jQuery-Boilerplate
 		else if( 'string' === typeof options && options[ 0 ] !== '_' && options !== 'init' ) {
 
@@ -352,7 +352,7 @@
 					// call the plugin public method
 					instance[ options ].call( instance );
 
-				}			
+				}
 
 			} );
 

@@ -1,5 +1,5 @@
 .logo a img{
-   display:none; 	
+   display:none;
 }
 .bg_dark {
 	background: #070510;
@@ -288,7 +288,7 @@ a.evo-hist {
 	color: #fff;
 	font-size: 21px;
 	margin-top: 7px;
-	
+
 }
 .demo_changer .btn {
 	margin-top: 10px;
@@ -574,7 +574,7 @@ a.evo-hist {
 	.demo_changer .sidebar-right1{
 		max-height: 100vh;
 		height:100vh;
-   
+
 	}
 }
 
@@ -604,7 +604,3 @@ a.evo-hist {
     color: #6f7892;
     background-color: transparent;
 }
-
-
-
-

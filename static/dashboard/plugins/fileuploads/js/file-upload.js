@@ -9,4 +9,3 @@ $('.dropify').dropify({
 		'fileSize': 'The file size is too big (2M max).'
 	}
 });
-	

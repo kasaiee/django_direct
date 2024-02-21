@@ -83,7 +83,7 @@
 
 <body class="{% if is_popup %}popup {% endif %}{% block bodyclass %}{% endblock %} main-body leftmenu"
   data-admin-utc-offset="{% now "Z" %}">
-  
+
   <!-- Switcher -->
   <div class="switcher-wrapper">
     <div class="demo_changer">
@@ -175,7 +175,7 @@
 
     <!-- Header -->
     <div class="{% if APP_LIST %}side-content{% endif %}">
-      
+
       {% if not is_popup %}
       {% if request.user.is_staff %}
       <!-- Main Header-->
@@ -469,7 +469,7 @@
       {% endcomment %}
     <div>
     <!-- END Header -->
-    
+
 
     {% block messages %}
         {% if messages %}
@@ -534,8 +534,8 @@
             {{ content }}
             {% endblock %}
           </div>
-            
-        
+
+
         {% block sidebar %}{% endblock %}
         <br class="clear">
     </div>
